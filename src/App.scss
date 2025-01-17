@@ -16,11 +16,13 @@
 
 .hero{
     padding: $padding-side-mobile;
-    
+
 }
 
 .hero__short-text {
     font-family: $font-outfit;
+    font-weight: 300;
+    padding: $padding-side-mobile 0;
 }
 
 body {
