@@ -1,0 +1,34 @@
+@use "../../styles/partials/variables.scss" as *;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem $padding-side-mobile;
+}
+
+.header__title {
+    font-family: $font-newsreader;
+    font-weight: $font-newsreader-regular;
+    font-size: 2rem;
+    color: $black;
+    padding: 50px, $padding-side-mobile;
+}
+
+.header__filter-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: solid $forest-green;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+
+}
+
+.header__filter {
+    font-family: $font-outfit;
+    font-weight: 500;
+    color: $forest-green;
+
+
+}

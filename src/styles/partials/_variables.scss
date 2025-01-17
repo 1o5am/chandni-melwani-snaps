@@ -1,0 +1,37 @@
+@use "typography.scss";
+
+// 1. Text Styles
+
+$font-newsreader: "Newsreader", sans-serif;
+
+$font-outfit: 'Outfit', 
+sans-serif; 
+
+// Mobile:
+
+$font-newsreader-light: 300;
+$font-newsreader-regular: 400;
+
+
+
+
+
+// 2. Colors
+
+$black: #0C1E1A;
+$forest-green: #1E6655;
+$pistachio: #EFFAF7;
+$sea-green: #B7CEC9;
+$sage: #E4EFEC;
+$white: white;
+
+// 2. Breakpoints
+
+$breakpoint-tablet: 768px;
+
+
+// Padding and margin
+
+// Mobile
+$padding-side-mobile: 1rem;
+

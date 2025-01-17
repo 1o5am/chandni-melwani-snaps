@@ -1,0 +1,40 @@
+@use "./styles/partials/variables" as *;
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $pistachio;
+    min-height: 100vh;
+}
+
+.hero{
+    padding: $padding-side-mobile;
+    
+}
+
+.hero__short-text {
+    font-family: $font-outfit;
+}
+
+body {
+    margin: 0;
+}
+
+.hero__long-text {
+    font-family: $font-newsreader;
+    font-weight: $font-newsreader-light;
+    color: $black;
+    font-size: 2rem;
+
+    &__italic{
+        font-style: italic;
+    }
+}
+
