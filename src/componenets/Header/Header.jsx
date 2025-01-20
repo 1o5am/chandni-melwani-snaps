@@ -6,13 +6,13 @@ function Header ({ filterOpen, setFilterOpen }) {
     return (
         <header className="header">
             <span className="header__title">Snaps</span>
-            <div 
+            <button 
                 className={`header__filter-button ${filterOpen ? "header__filter-button--active" : ""}`}
                 onClick={() => setFilterOpen((prev) => !prev)}
             >
                 <span className="header__filter">Filters</span>
                 <img src={filterIcon} alt="filter menu"/>
-            </div>
+            </button>
         </header>
     );
 }
