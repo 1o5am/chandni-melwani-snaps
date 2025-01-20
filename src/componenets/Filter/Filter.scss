@@ -1,0 +1,16 @@
+@use "../../styles/partials/variables.scss" as *;
+
+.filter {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: solid $forest-green;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+
+    &__button {
+        font-family: $font-outfit;
+        font-weight: 500;
+        color: $forest-green;
+    }
+}

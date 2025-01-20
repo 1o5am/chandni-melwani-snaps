@@ -1,17 +1,12 @@
 import './Header.scss'
 import filterIcon from '../../assets/images/Filter.svg'
+import Filter from '../Filter/Filter'
 
 function Header () {
     return (
         <header className="header">
-            <h1 className="header__title">Snaps</h1>
-            <div className="header__filter-button">
-                <p className="header__filter">Filters</p>
-                <img src={filterIcon} alt="filter menu"/>
-            </div>
-            
-
-
+            <span className="header__title">Snaps</span>
+            <Filter />
         </header>
     );
 }
