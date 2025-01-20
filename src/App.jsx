@@ -6,12 +6,14 @@ import Hero from "./componenets/Hero/Hero"
 
 function App() {
 
+  const [filterOpen, setFilterOpen] = useState[false]
+
   return (
     <>
     <div className="wholePage">
-      <Header />
+      <Header filterOpen={filterOpen} setFilterOpen={setFilterOpen} />
       <Hero />
-      <Main />
+      <Main filterOpen={filterOpen}/>
       </div>
     </>
   );
