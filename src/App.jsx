@@ -6,7 +6,7 @@ import Hero from "./componenets/Hero/Hero"
 
 function App() {
 
-  const [filterOpen, setFilterOpen] = useState[null]
+  const [filterOpen, setFilterOpen] = useState[false]
 
   return (
     <>
