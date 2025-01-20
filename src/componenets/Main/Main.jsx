@@ -4,7 +4,7 @@ import GalleryList from "../GalleryList/GalleryList";
 
 export default function Main({ filterOpen }) {
 
-    const [activeFilter, setActiveFilter] = useState[null];
+    const [activeFilter, setActiveFilter] = useState(null);
 
     return (
         <main className="main">
