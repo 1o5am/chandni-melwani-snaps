@@ -6,7 +6,7 @@ import Hero from "./componenets/Hero/Hero"
 
 function App() {
 
-  const [filterOpen, setFilterOpen] = useState[false];
+  const [filterOpen, setFilterOpen] = useState(false);
 
   return (
     <>
@@ -19,4 +19,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
