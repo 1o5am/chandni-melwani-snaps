@@ -2,7 +2,9 @@ import Filter from "../Filter/Filter"
 
 export default function Main() {
     return (
-        <Filter />
-        
+        <main className="main">
+            <Filter />
+            <MovieList />
+        </main>    
     );
 }
