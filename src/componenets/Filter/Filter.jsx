@@ -1,11 +1,28 @@
 import './Filter.scss'
-import filterIcon from '../../assets/images/Filter.svg'
+import tags from '../../data/tags.json'
 
 export default function Filter() {
+
+    const handleFilterClick = (tag) => {
+        console.log(`${tag} clicked!!`);
+    }
+
     return (
-        <div className="filter">
-            <span className="filter__button">Filters</span>
-            <img src={filterIcon} alt="filter menu"/>
+        <div className="filter-list">
+            {tags.map((tag, index) => {
+                return (
+                    <span 
+                        key={index}
+                        className="filter-list__tags"
+                        onClick={() => handleFilterClick(tag)}
+                    >
+                        {tag}
+                    </span>
+                );
+            }
+        )}
+
+
         </div>
     );
 }
