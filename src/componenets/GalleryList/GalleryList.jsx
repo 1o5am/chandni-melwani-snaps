@@ -1,5 +1,6 @@
 import photos from "../../data/photos.json"
 import GalleryCard from "../GalleryCard/GalleryCard"
+import "./GalleryList.scss"
 
 export default function() {
 

@@ -1,0 +1,17 @@
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+
+.gallery-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: $padding-side-mobile;
+
+    @include tablet {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include desktop {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
