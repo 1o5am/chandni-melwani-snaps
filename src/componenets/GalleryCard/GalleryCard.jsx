@@ -1,4 +1,4 @@
-import './GalleryCard.sccs'
+import './GalleryCard.scss'
 
 export default function GalleryCard ({ photo }) {
     return (
