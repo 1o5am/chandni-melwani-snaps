@@ -1,6 +1,7 @@
 @use "../../styles/partials/variables.scss" as *;
 
 .header {
+    height: 15vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,22 +14,25 @@
         color: $black;
         padding: 0.25rem $padding-side-mobile;
     }
-}
 
-.header__filter-button {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    border: solid $forest-green;
-    border-radius: 20px;
-    padding: 0.5rem 1rem;
+    &__filter-button {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        border: solid $forest-green;
+        border-radius: 20px;
+        padding: 0.5rem 1rem;
+        font-family: $font-outfit;
+        font-weight: 500;
+        color: $forest-green;
 
-}
+        &--active {
+            background-color: $forest-green;
+            color: $white;
 
-.header__filter {
-    font-family: $font-outfit;
-    font-weight: 500;
-    color: $forest-green;
-
-
+            img {
+                filter: invert(1) brightness(2);
+            }
+        }
+    }
 }

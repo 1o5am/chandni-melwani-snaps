@@ -1,6 +1,5 @@
 import './Header.scss'
 import filterIcon from '../../assets/images/Filter.svg'
-import Filter from '../Filter/Filter'
 
 function Header ({ filterOpen, setFilterOpen }) {
     return (
@@ -10,8 +9,7 @@ function Header ({ filterOpen, setFilterOpen }) {
             <div 
                 className={`header__filter-button ${filterOpen ? "header__filter-button--active" : ""}`}
                 onClick={() => setFilterOpen((prev) => !prev)}
-            >
-                <span className="header__filter">Filters</span>
+            >Filters
                 <img src={filterIcon} alt="filter menu"/>
             </div>
         </header>
