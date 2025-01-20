@@ -6,7 +6,10 @@ function Header () {
     return (
         <header className="header">
             <span className="header__title">Snaps</span>
-            <Filter />
+            <div className="header__filter-button">
+                <span className="header__filter">Filters</span>
+                <img src={filterIcon} alt="filter menu"/>
+            </div>
         </header>
     );
 }

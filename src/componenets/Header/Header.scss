@@ -11,24 +11,24 @@
         font-weight: 300;
         font-size: 3rem;
         color: $black;
-        padding: 50px, $padding-side-mobile;
+        padding: 0.25rem $padding-side-mobile;
     }
 }
 
-// .header__filter-button {
-//     display: flex;
-//     align-items: center;
-//     gap: 0.5rem;
-//     border: solid $forest-green;
-//     border-radius: 20px;
-//     padding: 0.5rem 1rem;
+.header__filter-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: solid $forest-green;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
 
-// }
+}
 
-// .header__filter {
-//     font-family: $font-outfit;
-//     font-weight: 500;
-//     color: $forest-green;
+.header__filter {
+    font-family: $font-outfit;
+    font-weight: 500;
+    color: $forest-green;
 
 
-// }
+}
