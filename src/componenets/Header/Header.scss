@@ -5,14 +5,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem $padding-side-mobile;
+    padding: 2rem $padding-side;
 
     &__title {
         font-family: $font-newsreader;
         font-weight: 400;
         font-size: 3rem;
         color: $black;
-        padding: 0.25rem $padding-side-mobile;
+        padding: 0.25rem $padding-side;
     }
 
     &__filter-button {
