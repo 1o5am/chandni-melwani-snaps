@@ -3,6 +3,7 @@ import GalleryCard from "../GalleryCard/GalleryCard";
 import "./GalleryList.scss";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const API_KEY = "3311a5bf-592d-4c57-8cab-0478f94be322"
 
@@ -38,7 +39,11 @@ export default function( {activeFilter} ) {
     return (
         <div className="gallery-list">
             {filteredPhotos.map((photo) => {
-                return <GalleryCard key={photo.id} photo={photo} />;
+                return (
+                    <Link key={photo.id} to={`/photo/${photo.id}`}>
+                        <GalleryCard photo={photo} />
+                    </Link>
+                );
             }
         )}
         </div>
