@@ -5,7 +5,7 @@ import MainPage from "./componenets/pages/MainPage/MainPage"
 import PhotoPage from './componenets/pages/PhotoPage/PhotoPage';
 import Hero from "./componenets/Hero/Hero"
 import Footer from './componenets/Footer/Footer';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 function App() {
 
@@ -15,20 +15,15 @@ function App() {
     <BrowserRouter>
     <Header filterOpen={filterOpen} setFilterOpen={setFilterOpen} />
     <Hero />
+
     <Routes>
       <Route path="/" element={ <MainPage filterOpen={filterOpen} />} />
-      {/* <Route path="/photo" element={ <PhotoPage />} />
+      <Route path="/photo" element={ <PhotoPage />} />
       <Route path="/photo/:photoId" element={ <PhotoPage /> } />
-      <Route path ="/*" element={<Navigate to="/" />} /> */}
+      <Route path ="/*" element={<Navigate to="/" />} />
     </Routes>
-    <>
-      <div className="wholePage">
-
-        <Hero />
-        {/* <Main filterOpen={filterOpen}/> */}
-        <Footer />
-      </div>
-    </>
+      <div className="wholePage"></div>
+    <Footer />
     </BrowserRouter>
   );
 }
