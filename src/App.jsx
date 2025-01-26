@@ -14,8 +14,9 @@ function App() {
   return (
     <BrowserRouter>
     <Header filterOpen={filterOpen} setFilterOpen={setFilterOpen} />
+    <Hero />
     <Routes>
-      <Route path="/" element={ <MainPage />} />
+      <Route path="/" element={ <MainPage filterOpen={filterOpen} />} />
       {/* <Route path="/photo" element={ <PhotoPage />} />
       <Route path="/photo/:photoId" element={ <PhotoPage /> } />
       <Route path ="/*" element={<Navigate to="/" />} /> */}
