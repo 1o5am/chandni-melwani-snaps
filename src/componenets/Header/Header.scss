@@ -35,4 +35,12 @@
             }
         }
     }
+
+    &__home-button {
+        font-family: $font-outfit;
+        font-size: 2rem;
+        font-weight: 500;
+        color: $forest-green;
+        text-decoration: none;
+    }
 }
