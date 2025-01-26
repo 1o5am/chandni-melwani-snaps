@@ -29,12 +29,12 @@ export default function PhotoPage() {
             <div className="photo__container">
 
                 <h1 className="photo__title"></h1>
-                {photo && (
+                {/* {photo && (
                     <article className="photo__description-container">
                         <img src={photo.urls.regular} alt={photo.description} />
                     <p className="photo__description">{photo.description}</p>
                     </article>
-                )}
+                )} */}
                 <img />
                 <div className="photo__tags">
                     <button className="photo__tag"></button>
