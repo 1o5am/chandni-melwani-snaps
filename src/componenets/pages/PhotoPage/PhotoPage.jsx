@@ -82,75 +82,75 @@ export default function PhotoPage() {
                 {photo && (
                     <div>
                         <img src={photo.photo} alt={photo.description} className="photo__image" />
+
                         <p className="photo__tags">Tags: {photo.tags}</p>
-                        <div className="photo__like">
-                            <img src={likeOutlineIcon} />
-                            <p className="photo__like">
-                            Likes: {photo.likes} 
-                            </p>
+
+                        <div className='photo__like-date-photographer'>
+
+                            <div className="photo__like-date">
+
+                                <div className="photo__like">
+                                    <img src={likeOutlineIcon} />
+                                    <p className="photo__like">
+                                    Likes: {photo.likes} 
+                                    </p>
+                                </div>
+                            
+
+                                <p className='photo__date'>Date: {formatDate(photo.timestamp)}</p>
+                                
+                            </div>
+
+                            <p className="photo__photographer"> Photo by {photo.photographer}</p>
+                            
                         </div>
-                        <p className='photo__date'>Date: {formatDate(photo.timestamp)}</p>
-                        <p className="photo__photographer"> Photo by {photo.photographer}</p>
+
                     </div>
                 )}
-                {/* <div className="photo__tags">
-                    {photoTags.map((tag) => (
-                        <span key={tag.id} className="photo__tag">
-                            {tag.name}
-                        </span>
-                    ))}
-                </div> */}
-                <div className="photo__likes-photographer-date">
-                    <div className="photo__likes-date">
-                        <p className="photo__like"></p>
-                        <p className="photo__date"></p>
+            </div>
+
+            {/* Add Comment Form */}
+            <div className="add-comment">
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label>
+                            Name:
+                            <input
+                                type="text"
+                                name="name"
+                                value={newComment.name}
+                                onChange={handleInputChange}
+                                required
+                            />
+                        </label>
                     </div>
-                    <p className="photo__photographer">Photo by: </p>
-                </div>
+                    <div>
+                        <label>
+                            Comment:
+                            <textarea
+                                name="comment"
+                                value={newComment.comment}
+                                onChange={handleInputChange}
+                                required
+                            />
+                        </label>
+                    </div>
+                    <button type="submit">Add Comment</button>
+                </form>
+            </div>
 
-                {/* Add Comment Form */}
-                <div className="add-comment">
-                    <form onSubmit={handleSubmit}>
-                        <div>
-                            <label>
-                                Name:
-                                <input
-                                    type="text"
-                                    name="name"
-                                    value={newComment.name}
-                                    onChange={handleInputChange}
-                                    required
-                                />
-                            </label>
+            {/* Display Comments */}
+            <div className="photo__comments">
+                {comments.length > 0 ? (
+                    comments.map((comment) => (
+                        <div key={comment.id}>
+                            <h4>{comment.name} <span>{formatDate(comment.timestamp)}</span></h4>
+                            <p>{comment.comment}</p>
                         </div>
-                        <div>
-                            <label>
-                                Comment:
-                                <textarea
-                                    name="comment"
-                                    value={newComment.comment}
-                                    onChange={handleInputChange}
-                                    required
-                                />
-                            </label>
-                        </div>
-                        <button type="submit">Add Comment</button>
-                    </form>
-                </div>
-
-                {/* Display Comments */}
-                <div className="photo__comments">
-                    {comments.length > 0 ? (
-                        comments.map((comment) => (
-                            <div key={comment.id}>
-                                <h4>{comment.name} <span>{formatDate(comment.timestamp)}</span></h4>
-                                <p>{comment.comment}</p>
-                            </div>
-                        ))
-                    ) : (
-                        <p>No comments available.</p>
-                    )}
-                </div>
+                    ))
+                ) : (
+                    <p>No comments available.</p>
+                )}
             </div>
         </main>
     );
