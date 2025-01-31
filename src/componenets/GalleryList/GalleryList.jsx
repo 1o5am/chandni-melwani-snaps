@@ -10,6 +10,7 @@ const API_KEY = "3311a5bf-592d-4c57-8cab-0478f94be322"
 export default function( {activeFilter} ) {
 
     const [photos, setPhotos] = useState([]);
+    const [tags, setTags] = useState([]);
 
     const getPhotos = async () => {
         try {
@@ -21,8 +22,19 @@ export default function( {activeFilter} ) {
         }
     }
 
+    const getTags = async () => {
+        try {
+            const response = await axios.get(`https://unit-3-project-c5faaab51857.herokuapp.com/tags?api_key=${API_KEY}`);
+            console.log(response.data);
+            setTags(response.data);
+        } catch (error) {
+            console.error("Error fetching tags:", error);
+        }
+    }
+
     useEffect(() => {
         getPhotos();
+        getTags();
     }, []);
 
     // Filter photos based on the active filter
@@ -36,12 +48,13 @@ export default function( {activeFilter} ) {
     });
 
 
+
     return (
         <div className="gallery-list">
             {filteredPhotos.map((photo) => {
                 return (
                     <Link key={photo.id} to={`/photo/${photo.id}`}>
-                        <GalleryCard photo={photo} />
+                        <GalleryCard photo={photo} tags={tags}/>
                     </Link>
                 );
             }

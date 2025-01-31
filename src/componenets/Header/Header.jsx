@@ -1,6 +1,7 @@
 import './Header.scss'
 import filterIcon from '../../assets/images/Filter.svg'
 import { useLocation, Link } from 'react-router-dom';
+import arrowIcon from '../../assets/images/Arrow.svg'
 
 function Header ({ filterOpen, setFilterOpen }) {
 
@@ -11,6 +12,7 @@ function Header ({ filterOpen, setFilterOpen }) {
             <span className="header__title">Snaps</span>
             {isPhotoPage ? (
                 <Link to="/" className="header__home-button">
+                    <img src={arrowIcon} alt="arrow icon" className='header__home-button__icon'/>
                     Home
                 </Link>
             ) : ( 
