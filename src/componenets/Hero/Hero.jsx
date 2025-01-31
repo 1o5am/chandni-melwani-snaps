@@ -1,6 +1,12 @@
 import './Hero.scss'
+import { useLocation } from 'react-router-dom';
 
 export default function Hero() {
+    const location = useLocation();
+
+    if (location.pathname.startsWith('/photo')) {
+        return null;
+    }
     return (
         <div className="hero">
             <p className="hero__short-text">Our mission:</p>
