@@ -9,7 +9,9 @@ function Header ({ filterOpen, setFilterOpen }) {
 
     return (
         <header className="header">
-            <span className="header__title">Snaps</span>
+            <Link to="/">
+                <span className="header__title">Snaps</span>
+            </Link>
             {isPhotoPage ? (
                 <Link to="/" className="header__home-button">
                     <img src={arrowIcon} alt="arrow icon" className='header__home-button__icon'/>
