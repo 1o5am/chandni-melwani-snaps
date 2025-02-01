@@ -76,80 +76,161 @@ export default function PhotoPage() {
         return date.toLocaleDateString('en-US'); // Default 'en-US' format is mm/dd/yyyy
     };
 
+    // return (
+    //     <main className="photo-page">
+    //         <div className="photo__container">
+    //             {photo && (
+    //                 <div>
+    //                     <img src={photo.photo} alt={photo.description} className="photo__image" />
+
+    //                     <p className="photo__tags">Tags: {photo.tags}</p>
+
+    //                     <div className='photo__like-date-photographer'>
+
+    //                         <div className="photo__like-date">
+
+    //                             <div className="photo__like">
+    //                                 <img src={likeOutlineIcon} />
+    //                                 <p className="photo__like">
+    //                                 Likes: {photo.likes} 
+    //                                 </p>
+    //                             </div>
+                            
+
+    //                             <p className='photo__date'>Date: {formatDate(photo.timestamp)}</p>
+                                
+    //                         </div>
+
+    //                         <p className="photo__photographer"> Photo by {photo.photographer}</p>
+                            
+    //                     </div>
+
+    //                 </div>
+    //             )}
+    //         </div>
+
+    //         {/* Add Comment Form */}
+    //         <div className="add-comment">
+    //             <form onSubmit={handleSubmit}>
+    //                 <div>
+    //                     <label>
+    //                         Name:
+    //                         <input
+    //                             type="text"
+    //                             name="name"
+    //                             value={newComment.name}
+    //                             onChange={handleInputChange}
+    //                             required
+    //                         />
+    //                     </label>
+    //                 </div>
+    //                 <div>
+    //                     <label>
+    //                         Comment:
+    //                         <textarea
+    //                             name="comment"
+    //                             value={newComment.comment}
+    //                             onChange={handleInputChange}
+    //                             required
+    //                         />
+    //                     </label>
+    //                 </div>
+    //                 <button type="submit">Add Comment</button>
+    //             </form>
+    //         </div>
+
+    //         {/* Display Comments */}
+    //         <div className="photo__comments">
+    //             {comments.length > 0 ? (
+    //                 comments.map((comment) => (
+    //                     <div key={comment.id}>
+    //                         <h4>{comment.name} <span>{formatDate(comment.timestamp)}</span></h4>
+    //                         <p>{comment.comment}</p>
+    //                     </div>
+    //                 ))
+    //             ) : (
+    //                 <p>No comments available.</p>
+    //             )}
+    //         </div>
+    //     </main>
+    // );
+
     return (
         <main className="photo-page">
-            <div className="photo__container">
+            <div className="photo-page__container">
                 {photo && (
-                    <div>
-                        <img src={photo.photo} alt={photo.description} className="photo__image" />
-
-                        <p className="photo__tags">Tags: {photo.tags}</p>
-
-                        <div className='photo__like-date-photographer'>
-
-                            <div className="photo__like-date">
-
-                                <div className="photo__like">
-                                    <img src={likeOutlineIcon} />
-                                    <p className="photo__like">
-                                    Likes: {photo.likes} 
-                                    </p>
-                                </div>
-                            
-
-                                <p className='photo__date'>Date: {formatDate(photo.timestamp)}</p>
-                                
+                    <div className="photo-page__content">
+                        <img src={photo.photo} alt={photo.description} className="photo-page__image" />
+    
+                        <div className="photo-page__tags">
+                            {photo.tags.map((tag, index) => (
+                                <span key={index} className="photo-page__tag">{tag}</span>
+                            ))}
+                        </div>
+    
+                        <div className="photo-page__info">
+                            <div className="photo-page__likes">
+                                <img src={likeOutlineIcon} alt="like icon" className="photo-page__like-icon" />
+                                <p className="photo-page__like-text">Likes: {photo.likes}</p>
                             </div>
 
-                            <p className="photo__photographer"> Photo by {photo.photographer}</p>
+                            <div className="photo-page__date-photographer">
+                                <p className="photo-page__date">Date: {formatDate(photo.timestamp)}</p>
                             
+                                <p className="photo-page__photographer">Photo by {photo.photographer}</p>
+                            </div>
                         </div>
-
                     </div>
                 )}
             </div>
-
+    
             {/* Add Comment Form */}
-            <div className="add-comment">
-                <form onSubmit={handleSubmit}>
-                    <div>
-                        <label>
-                            Name:
+            <div className="photo-page__add-comment">
+                <form className="photo-page__form" onSubmit={handleSubmit}>
+                    <div className="photo-page__form-group">
+                        <p> Name:</p>
+                        <label className="photo-page__label">
                             <input
                                 type="text"
                                 name="name"
+                                className="photo-page__input"
                                 value={newComment.name}
                                 onChange={handleInputChange}
                                 required
                             />
                         </label>
                     </div>
-                    <div>
-                        <label>
-                            Comment:
+                    <div className="photo-page__form-group">
+                        <p>Comment:</p>
+                        <label className="photo-page__label">
                             <textarea
                                 name="comment"
+                                className="photo-page__textarea"
                                 value={newComment.comment}
                                 onChange={handleInputChange}
                                 required
                             />
                         </label>
                     </div>
-                    <button type="submit">Add Comment</button>
+                    <button type="submit" className="photo-page__button">Submit</button>
                 </form>
             </div>
-
+    
             {/* Display Comments */}
-            <div className="photo__comments">
+            <div className="photo-page__comments">
                 {comments.length > 0 ? (
                     comments.map((comment) => (
-                        <div key={comment.id}>
-                            <h4>{comment.name} <span>{formatDate(comment.timestamp)}</span></h4>
-                            <p>{comment.comment}</p>
+                        <div key={comment.id} className="photo-page__comment">
+                            <div className='photo-page__comment-date'>
+                                <p className="photo-page__comment-name">
+                                    {comment.name} </p>
+                                <span className="photo-page__comment-date">{formatDate(comment.timestamp)}</span>
+                            </div>
+                            <p className="photo-page__comment-text">{comment.comment}</p>
                         </div>
                     ))
                 ) : (
-                    <p>No comments available.</p>
+                    <p className="photo-page__no-comments">No comments available.</p>
                 )}
             </div>
         </main>

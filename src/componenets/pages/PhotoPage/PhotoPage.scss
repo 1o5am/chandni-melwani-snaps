@@ -1,19 +1,106 @@
-.photo {
-    padding: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+@use "../../../styles/partials/variables.scss" as *;
+
+.photo-page {
+
+    font-family: $font-outfit;
+    padding: $padding-side;
+
+    &__container {
+        border: solid 5px blue;
+        background-color: $sea-green;
+        // padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    &__content {
+        border: solid 10px black;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
 
     &__image {
         border: solid 5px red;
         max-width: 100%;
     }
 
-    .photo__tag {
-        background-color: #e0e0e0;
-        padding: 0.5rem 1rem;
-        border-radius: 20px;
-        font-family: Arial, sans-serif;
-        font-size: 0.9rem;
+    &__tags {
+        border: solid 5px green;
+        display: flex;
+        gap: 2rem;
+
     }
+
+    &__tag {
+        background-color: $white;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        border: 2px solid $forest-green;
+    }
+
+    &__likes {
+        display: flex;
+        gap: 0.5rem;
+
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    &__add-comment{
+        margin-top: 2rem;
+    }
+
+    &__date-photographer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    &__form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    &__input, &__textarea {
+        width: 100%;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid $sea-green;
+    }
+
+    &__button {
+        align-self: flex-end;
+        padding: 0.5rem 1.5rem;
+        font-size: 1.2rem;
+        font-family: $font-outfit;
+        background-color: $forest-green;
+        color: $white;
+        border-radius: 0.5rem;
+        border: 0px;
+    }
+
+    &__comment{
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &__comment-date {
+        display: flex;
+        justify-content: space-between;
+    }
+
 }
