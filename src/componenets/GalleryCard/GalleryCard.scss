@@ -34,10 +34,15 @@
     }
 
     &__tags {
-        display: flex;
+        // display: flex;
+        display: flex !important;
         flex-wrap: wrap;
         gap: 0.5rem;
-        margin-right: auto; 
+        margin-right: auto;
+        // border: 2px solid red;
+        // background-color: yellow; // Make it stand out
+
+
 
         .gallery-card__tag {
             background-color: $white;
@@ -45,6 +50,8 @@
             border-radius: 0.25rem;
             padding: 0.25rem 0.5rem;
             font-size: 0.8rem;
+            border: 2px solid red;
+            background-color: yellow; // Make it stand out
 
             @include tablet {
                 font-size: 0.9rem;

@@ -1,10 +1,22 @@
 import './GalleryCard.scss'
 import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 
-export default function GalleryCard ({ photo, tags }) {
+export default function GalleryCard ({ photo }) {
 
-    const photoTags = tags.filter((tag) => photo.tags.includes(tag.id));
+    console.log("Photo:", photo);
+    console.log("Photo Tags:", photo?.tags);
+    console.log("All Tags:", photo.tags);
+
+
+    // const photoTags = photo.tags?.filter((tag) => photo?.tags?.includes(tag.id) || []);
+    // const photoTags = photo.tags.filter((tag) => photo.tags.includes(tag.name));
+
+    // const photoTags = photo.tags || []; // ✅ Use `photo.tags` directly
+
+    console.log("PhotoTags before rendering:", photo.tags);
 
     return (
         <div className="gallery-card">
@@ -17,20 +29,24 @@ export default function GalleryCard ({ photo, tags }) {
                 <span className='gallery-card__photographer'>{photo.photographer}
                 </span>
                 <div className="gallery-card__tags">
-                    {photo.tags.map((tag) => (
-                            <span key={tag.id} className="gallery-card__tag">
-                                {tag.name}
+                    <p>Tags Section:</p>
+                    {photo.tags.map((tag, index) => {
+                        return (
+                            <span key={tag.name || index} className="gallery-card__tag">
+                                {tag}
                             </span>
-                    ))}
+                        );
+                    })}
+                 
                 </div>
-                <Link 
+                {/* <Link 
                     to={{
                         pathname: `/photo/${photo.id}`,
                         state: { photo, tags: photoTags }   
                     }}
                 >
                     <span className='gallery-card__view-button'>View</span>
-                </Link>
+                </Link> */}
             </div>
         </div>
     );

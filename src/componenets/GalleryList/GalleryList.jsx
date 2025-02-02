@@ -12,30 +12,58 @@ export default function( {activeFilter} ) {
     const [photos, setPhotos] = useState([]);
     const [tags, setTags] = useState([]);
 
-    const getPhotos = async () => {
-        try {
-            const response = await axios.get(`https://unit-3-project-c5faaab51857.herokuapp.com/photos?api_key=${API_KEY}`);
-            console.log(response.data);
-            setPhotos(response.data);
-        } catch (error) {
-            console.error("Error fetching photos:", error);
-        }
-    }
+    // const getPhotos = async () => {
+    //     try {
+    //         const response = await axios.get(`https://unit-3-project-c5faaab51857.herokuapp.com/photos?api_key=${API_KEY}`);
+    //         console.log("Photots API response:", response.data); 
+    //         setPhotos(response.data);
 
-    const getTags = async () => {
-        try {
-            const response = await axios.get(`https://unit-3-project-c5faaab51857.herokuapp.com/tags?api_key=${API_KEY}`);
-            console.log(response.data);
-            setTags(response.data);
-        } catch (error) {
-            console.error("Error fetching tags:", error);
-        }
-    }
+    //     } catch (error) {s
+    //         console.error("Error fetching photos:", error);
+    //     }
+    // }
+
+    // // const getTags = async () => {
+    // //     try {
+    // //         const response = await axios.get(`https://unit-3-project-c5faaab51857.herokuapp.com/tags?api_key=${API_KEY}`);
+    // //         console.log(response.data);
+    // //         setTags(response.data);
+    // //     } catch (error) {
+    // //         console.error("Error fetching tags:", error);
+    // //     }
+    // // }
+
+    // useEffect(() => {
+    //     getPhotos();
+    //     console.log(
+    //         "Tags per photo:",
+    //         photos.map(photo => ({
+    //             id: photo.id,
+    //             totalTags: photo.tags.length,
+    //             tags: photo.tags
+    //         }))
+    //     );
+    // }, []);
 
     useEffect(() => {
+        const getPhotos = async () => {
+            try {
+                const response = await axios.get(`https://unit-3-project-c5faaab51857.herokuapp.com/photos?api_key=${API_KEY}`);
+                console.log("Photos API response:", response.data);
+                setPhotos(response.data);
+            } catch (error) {
+                console.error("Error fetching photos:", error);
+            }
+        };
+    
         getPhotos();
-        getTags();
     }, []);
+
+    useEffect(() => {
+        if (photos.length > 0) {
+            console.log("Passing to GalleryCard:", { photos });
+        }
+    }, [photos]); // ✅ Runs only when `photos` is updated
 
     // Filter photos based on the active filter
     const filteredPhotos = photos.filter((photo) => {
@@ -47,15 +75,28 @@ export default function( {activeFilter} ) {
         return photo.tags.includes(activeFilter);
     });
 
+    // const totalTags = photos.reduce((acc, photo) => acc + (photo.tags?.length || 0), 0);
+    // console.log(`Total tags across all photos: ${totalTags}`);
+
+    useEffect(() => {
+        if (photos.length > 0) {
+            console.log("Passing to GalleryCard:", { photos });
+        }
+    }, [photos]); // ✅ Runs only when `photos` is updated
 
 
     return (
         <div className="gallery-list">
+            {console.log("Passing to GalleryCard:", { photos })}
             {filteredPhotos.map((photo) => {
                 return (
+                    // <Link key={photo.id} to={`/photo/${photo.id}`}>
+                    //     <GalleryCard photo={photo} tags={tags}/>
+                    // </Link>
                     <Link key={photo.id} to={`/photo/${photo.id}`}>
-                        <GalleryCard photo={photo} tags={tags}/>
+                    <GalleryCard photo={photo}/>
                     </Link>
+                    
                 );
             }
         )}

@@ -1,5 +1,5 @@
 import './Filter.scss'
-import tags from '../../data/tags.json'
+// import tags from '../../data/tags.json'
 // get data from api
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
