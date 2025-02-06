@@ -39,9 +39,6 @@ export default function( {activeFilter} ) {
         <div className="gallery-list">
             {filteredPhotos.map((photo) => {
                 return (
-                    // <Link key={photo.id} to={`/photo/${photo.id}`}>
-                    //     <GalleryCard photo={photo} tags={tags}/>
-                    // </Link>
                     <Link key={photo.id} to={`/photo/${photo.id}`}>
                     <GalleryCard photo={photo}/>
                     </Link>
@@ -52,36 +49,3 @@ export default function( {activeFilter} ) {
         </div>
     );
 }
-
-  // const getPhotos = async () => {
-    //     try {
-    //         const response = await axios.get(`https://unit-3-project-c5faaab51857.herokuapp.com/photos?api_key=${API_KEY}`);
-    //         console.log("Photots API response:", response.data); 
-    //         setPhotos(response.data);
-
-    //     } catch (error) {s
-    //         console.error("Error fetching photos:", error);
-    //     }
-    // }
-
-    // // const getTags = async () => {
-    // //     try {
-    // //         const response = await axios.get(`https://unit-3-project-c5faaab51857.herokuapp.com/tags?api_key=${API_KEY}`);
-    // //         console.log(response.data);
-    // //         setTags(response.data);
-    // //     } catch (error) {
-    // //         console.error("Error fetching tags:", error);
-    // //     }
-    // // }
-
-    // useEffect(() => {
-    //     getPhotos();
-    //     console.log(
-    //         "Tags per photo:",
-    //         photos.map(photo => ({
-    //             id: photo.id,
-    //             totalTags: photo.tags.length,
-    //             tags: photo.tags
-    //         }))
-    //     );
-    // }, []);

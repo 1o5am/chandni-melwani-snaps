@@ -27,14 +27,6 @@ export default function GalleryCard ({ photo }) {
                     })}
                  
                 </div>
-                {/* <Link 
-                    to={{
-                        pathname: `/photo/${photo.id}`,
-                        state: { photo, tags: photoTags }   
-                    }}
-                >
-                    <span className='gallery-card__view-button'>View</span>
-                </Link> */}
             </div>
         </div>
     );

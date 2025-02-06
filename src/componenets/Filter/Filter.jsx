@@ -51,25 +51,3 @@ export default function Filter({ activeFilter, setActiveFilter }) {
         </div>      
     )    
 }
-
-
-//     return (
-//         <div className="filter">
-//             <div className="filter-text">Filters</div>
-//             <div className="filter-list">
-//                 {tags.map((tag, index) => {
-//                     return (
-//                         <span 
-//                             key={index}
-//                             className={`filter-list__tags ${activeFilter === tag ? "filter-list__tags--active" : ""}`}
-//                             onClick={() => handleFilterClick(tag)}
-//                         >
-//                             {tag}
-//                         </span>
-//                     );
-//                 }
-//             )}
-//             </div>
-//         </div>
-//     );
-// }
