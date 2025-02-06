@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 
 const API_KEY = "3311a5bf-592d-4c57-8cab-0478f94be322"
 
+const base_URL = import.meta.env.VITE_API_URL ;
+
 export default function( {activeFilter} ) {
 
     const [photos, setPhotos] = useState([]);
@@ -48,7 +50,7 @@ export default function( {activeFilter} ) {
     useEffect(() => {
         const getPhotos = async () => {
             try {
-                const response = await axios.get(`https://unit-3-project-c5faaab51857.herokuapp.com/photos?api_key=${API_KEY}`);
+                const response = await axios.get(`${base_URL}/photos`);
                 console.log("Photos API response:", response.data);
                 setPhotos(response.data);
             } catch (error) {

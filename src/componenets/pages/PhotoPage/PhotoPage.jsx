@@ -4,7 +4,7 @@ import { useParams, useLocation } from 'react-router-dom';
 import './PhotoPage.scss';
 import likeOutlineIcon from "../../../assets/images/Like_Outline.svg"
 
-const API_KEY = "3311a5bf-592d-4c57-8cab-0478f94be322";
+const base_URL = import.meta.env.VITE_API_URL ;
 
 export default function PhotoPage() {
 
@@ -24,7 +24,7 @@ export default function PhotoPage() {
     // get photo id object from /photos/id endpoint
     const fetchPhoto = async (id) => {
         try {
-            const response = await axios.get(`https://unit-3-project-c5faaab51857.herokuapp.com/photos/${id}?api_key=${API_KEY}`);
+            const response = await axios.get(`${base_URL}/photos`);
             const photoState = setPhoto(response.data);
             photoState
             console.log(`This is the photo state: ${photoState}`);
@@ -34,6 +34,10 @@ export default function PhotoPage() {
     };
 
     // get comments object from photos/id/comments endpoint
+
+    // const fetchComments = async (id) => {
+    //     const response = await axios.get(`http://localhost:${PORT}`)
+    // }
     const fetchComments = async (id) => {
         try {
             const response = await axios.get(`https://unit-3-project-c5faaab51857.herokuapp.com/photos/${id}/comments?api_key=${API_KEY}`);
@@ -64,7 +68,8 @@ export default function PhotoPage() {
                 `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${photoId}/comments?api_key=${API_KEY}`,
                 newComment
             );
-            setComments([response.data, ...comments]); // Prepend the new comment to the list
+            fetchComments(photoId)
+            // setComments([response.data, ...comments]); // Prepend the new comment to the list
             setNewComment({ name: '', comment: '' }); // Reset the form
         } catch (error) {
             console.error('Error adding comment:', error);

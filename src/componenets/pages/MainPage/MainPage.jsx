@@ -2,7 +2,7 @@ import { useState } from "react";
 import Filter from "../../Filter/Filter"
 import GalleryList from "../../GalleryList/GalleryList";
 
-const API_KEY = "3311a5bf-592d-4c57-8cab-0478f94be322"
+const API_KEY = import.meta.env.API_KEY;
 
 export default function Main({ filterOpen }) {
 
