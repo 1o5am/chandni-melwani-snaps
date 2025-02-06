@@ -1,9 +1,9 @@
 import './Filter.scss'
-// import tags from '../../data/tags.json'
-// get data from api
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams, useLocation } from 'react-router-dom'; 
+
+const base_URL = import.meta.env.VITE_API_URL ;
 
 export default function Filter({ activeFilter, setActiveFilter }) {
 
@@ -21,7 +21,7 @@ export default function Filter({ activeFilter, setActiveFilter }) {
     useEffect(() => {
         const fetchTags = async () => {
             try {
-                const response = await axios.get('https://unit-3-project-c5faaab51857.herokuapp.com/tags?api_key=3311a5bf-592d-4c57-8cab-0478f94be322');
+                const response = await axios.get(`${base_URL}/tags`);
                 setTags(response.data);
             } catch (error) {
                 console.error(error);

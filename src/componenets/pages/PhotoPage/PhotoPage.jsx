@@ -24,10 +24,9 @@ export default function PhotoPage() {
     // get photo id object from /photos/id endpoint
     const fetchPhoto = async (id) => {
         try {
-            const response = await axios.get(`${base_URL}/photos`);
+            const response = await axios.get(`${base_URL}/photos/${id}`);
             const photoState = setPhoto(response.data);
             photoState
-            console.log(`This is the photo state: ${photoState}`);
         } catch (error) {
             console.error(error);
         }
@@ -40,7 +39,7 @@ export default function PhotoPage() {
     // }
     const fetchComments = async (id) => {
         try {
-            const response = await axios.get(`https://unit-3-project-c5faaab51857.herokuapp.com/photos/${id}/comments?api_key=${API_KEY}`);
+            const response = await axios.get(`${base_URL}/photos/${id}/comments`);
             const sortedComments = response.data.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
             setComments(sortedComments);
         } catch (error) {
@@ -65,10 +64,13 @@ export default function PhotoPage() {
         e.preventDefault();
         try {
             const response = await axios.post(
-                `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${photoId}/comments?api_key=${API_KEY}`,
+                `${base_URL}/photos/${photoId}/comments`,
                 newComment
             );
-            fetchComments(photoId)
+            setComments([response.data, ...comments])
+            console.log("This is response.data:", response.data);
+            console.log("This is comments state:", comments);
+            console.log("This is setComments state:", setComments);
             // setComments([response.data, ...comments]); // Prepend the new comment to the list
             setNewComment({ name: '', comment: '' }); // Reset the form
         } catch (error) {

@@ -2,7 +2,7 @@ import { useState } from "react";
 import Filter from "../../Filter/Filter"
 import GalleryList from "../../GalleryList/GalleryList";
 
-const API_KEY = import.meta.env.API_KEY;
+const base_URL = import.meta.env.VITE_API_URL ;
 
 export default function Main({ filterOpen }) {
 
