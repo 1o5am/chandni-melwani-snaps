@@ -2,20 +2,16 @@
 @use "../../styles/partials/mixins.scss" as *;
 
 .hero {
-    padding: $padding-side;
-    // @include grid-container();
-
     &__short-text {
         font-family: $font-outfit;
         font-weight: 300;
+        @include heading();
+        font-weight: $font-outfit-light;
     }
 
     &__long-text {
-        font-family: $font-newsreader;
-        font-weight: $font-newsreader-light;
-        color: $black;
-        font-size: 2rem;
-    
+        @include title();
+        
         &__italic{
             font-style: italic;
         }
