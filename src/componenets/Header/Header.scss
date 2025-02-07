@@ -8,7 +8,7 @@ a {
 .header {
     @include grid-container();
     @include flex-between();
-    height: 15vh;
+    height: 10vh;
     // display: flex;
     // justify-content: space-between;
     // align-items: center;
