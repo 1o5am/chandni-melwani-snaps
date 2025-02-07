@@ -38,12 +38,12 @@ export default function Footer() {
                             </div>
                         </div>
                 </div>
-                    <div className="footer__social-media">
-                        <img src={facebookIcon} alt="facebook icon" />
-                        <img src={instagramIcon} alt="instagram icon" />
-                        <img src={XIcon} alt="X icon" />
-                        <img src={pinterestIcon} alt="pinterest icon" />
-                    </div>
+                <div className="footer__social-media">
+                    <img src={facebookIcon} alt="facebook icon" />
+                    <img src={instagramIcon} alt="instagram icon" />
+                    <img src={XIcon} alt="X icon" />
+                    <img src={pinterestIcon} alt="pinterest icon" />
+                </div>
             </div>
             <div className="footer__copyright">
                     © 2024 Snaps

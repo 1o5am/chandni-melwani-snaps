@@ -38,12 +38,7 @@ a {
         @include heading();
         @include cta-default();
         @include cta-icon-spacing();
-        // background-color: $white;
-
-        // i
-
-        // color: $forest-green;
-
+        background-color: $pistachio;
 
         &--active {
             background-color: $forest-green;

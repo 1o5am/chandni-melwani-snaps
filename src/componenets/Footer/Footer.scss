@@ -10,6 +10,7 @@
     color: black;
     margin-bottom: 0.5rem;
     @include grid-container();
+    @include label();
 
     &__title-content-social-media {
         display: flex;
@@ -18,11 +19,11 @@
     }
 
     &__title {
-        font-family: $font-newsreader;
-        font-weight: 300;
-        font-size: 3rem;
-        color: $black;
-        margin-top: 1rem;
+        @include wordmark();        font-family: $font-newsreader;
+        // font-weight: 300;
+        // font-size: 3rem;
+        // color: $black;
+        margin-top: 3rem;
         margin-bottom: 2rem;
     }
 
@@ -62,6 +63,29 @@
         color: $sea-green;
         margin-bottom: 0rem;
         @include flex-between();
+        
+        @include tablet {
+            justify-content: flex-start;
+            gap: 0.5rem;
+        }
+    }
+
+    &__title-content {
+        @include tablet  {
+            @include flex-between();
+            align-items: flex-end;
+            margin-bottom: 3rem;
+            margin-top: 3rem;
+        }
+    }
+
+    &__content {
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            gap: 5rem;
+        }
+
     }
 
 }
