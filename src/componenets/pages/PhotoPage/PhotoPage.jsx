@@ -145,7 +145,7 @@ export default function PhotoPage() {
     
             {/* Display Comments */}
             <div className="photo-page__comments">
-                
+                <p className="photo-page__comments-count">{comments.length} comments</p>
                 {comments.length > 0 ? (
                     comments.map((comment) => (
                         <div key={comment.id} className="photo-page__comment">
