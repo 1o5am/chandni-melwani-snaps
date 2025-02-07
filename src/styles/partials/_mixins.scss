@@ -11,3 +11,255 @@
         @content;
     }
 }
+
+// Font Family Mixins
+
+@mixin font-newsreader {
+    font-family: $font-newsreader;
+}
+
+@mixin font-outfit {
+    font-family: $font-outfit;
+}
+
+// Typography Scale Mixins
+
+@mixin wordmark {
+    @include font-newsreader();
+    font-weight: $font-newsreader-regular;
+    font-size: 32px;
+    line-height: 32px;
+
+    @include tablet {
+        font-size: 40px;
+        line-height: 40px;
+    }
+}
+
+@mixin title {
+    @include font-newsreader();
+    font-weight: $font-newsreader-light;
+    font-size: 26px;
+    line-height: 38px;
+
+    @include tablet {
+        font-size: 52px;
+        line-height: 66px;
+    }
+
+    &--italic {
+        font-style: italic;
+    }
+}
+
+@mixin heading {
+    @include font-outfit;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+
+    @include tablet {
+        font-size: 24px;
+        line-height: 30px;
+    }
+}
+
+@mixin body-copy {
+    @include font-outfit;
+    font-size: 12px;
+    line-height: 15px;
+
+    @include tablet {
+        font-size: 20px;
+        line-height: 26px;
+    }
+
+    &--medium {
+        font-weight: 500;
+    }
+
+    &--light {
+        font-weight: 300;
+    }
+}
+
+@mixin small-body {
+    @include font-outfit;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+
+    @include tablet {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
+
+@mixin label {
+    @include font-outfit;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+
+    @include tablet {
+        font-size: 14px;
+        line-height: 17.5px;
+    }
+}
+
+// Grid Container
+@mixin grid-container {
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    @include tablet {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    @include desktop {
+        max-width: 1440px;
+    }
+}
+
+// Grid Columns
+@mixin grid-columns {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(4, 1fr);
+
+    @include tablet {
+        gap: 24px;
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    @include desktop {
+        grid-template-columns: repeat(12, 1fr);
+    }
+}
+
+// Layout Mixins
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+// Tag Mixins
+@mixin tag-base {
+    padding: 6px 8px;
+    border-radius: 6px;
+    
+    @include tablet {
+        padding: 8px 12px;
+        border-radius: 12px;
+    }
+}
+
+@mixin tag-clickable {
+    @include tag-base;
+    border: 1px solid $forest-green;
+    color: $forest-green;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        background-color: $forest-green;
+        color: $white;
+    }
+}
+
+@mixin tag-non-clickable {
+    @include tag-base;
+    border: 1px solid $sea-green;
+    color: $sea-green;
+}
+
+// Form Field Mixins
+@mixin form-field {
+    height: 30px;
+    min-width: 280px;
+    padding: 8px;
+    border: 2px solid $sea-green;
+    
+    @include tablet {
+        height: 40px;
+        padding: 8px 16px;
+    }
+    
+    &:focus {
+        border-color: $forest-green;
+        outline: none;
+    }
+    
+    &.error {
+        border-color: #B10606;
+    }
+}
+
+// Card Mixins
+@mixin card-base {
+    background-color: $sage;
+    border: 1px solid $sea-green;
+    border-radius: 8px;
+    padding: 8px;
+    
+    @include tablet {
+        border-radius: 12px;
+        padding: 16px;
+    }
+}
+
+
+// CTA Mixins
+@mixin cta-base {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid $forest-green;
+    transition: all 0.3s ease;
+    
+    // Mobile padding
+    padding: 8px 16px;
+    
+    // Rounded sides, flat top/bottom
+    border-radius: 999px;
+    
+    @include tablet {
+        padding: 11px 22px;
+    }
+}
+
+@mixin cta-default {
+    @include cta-base;
+    background-color: $white;
+    color: $forest-green;
+    
+    &:hover {
+        background-color: $forest-green;
+        color: $white;
+    }
+    
+    // For icons within CTA
+    .icon {
+        height: 1em;
+        margin-left: 8px;
+    }
+}
+
+@mixin cta-icon-spacing {
+    gap: 8px;
+}
+

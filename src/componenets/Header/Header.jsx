@@ -14,7 +14,7 @@ function Header ({ filterOpen, setFilterOpen }) {
             </Link>
             {isPhotoPage ? (
                 <Link to="/" className="header__home-button">
-                    <img src={arrowIcon} alt="arrow icon" className='header__home-button__icon'/>
+                    <img src={arrowIcon} alt="arrow icon" className='header__home-button--icon'/>
                     Home
                 </Link>
             ) : ( 

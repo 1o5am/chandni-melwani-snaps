@@ -1,30 +1,45 @@
 @use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
 
+
+a {
+    text-decoration: none !important;
+}
 .header {
+    @include grid-container();
+    @include flex-between();
     height: 15vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem $padding-side;
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    // padding: 1.5rem $padding-side;
+
 
     &__title {
         font-family: $font-newsreader;
-        font-weight: 400;
-        font-size: 3rem;
+        font-weight: $font-newsreader-light;
         color: $black;
         padding: 0.25rem $padding-side;
+        @include wordmark();
     }
 
     &__filter-button {
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 1rem;
         border: solid $forest-green;
-        border-radius: 20px;
-        padding: 0.5rem 1rem;
+        border-radius: 40px;
+        // padding: 11px 22px 11px 22px;
+        padding: 0.7rem 1.4rem;
         font-family: $font-outfit;
         font-weight: 500;
         color: $forest-green;
+        font-size: 26px;
+        @include heading();
+        @include cta-base();
+        @include cta-default();
+        @include cta-icon-spacing();
+
 
         &--active {
             background-color: $forest-green;
@@ -38,9 +53,13 @@
 
     &__home-button {
         font-family: $font-outfit;
-        font-size: 2rem;
+        font-size: 26px;
         font-weight: 500;
         color: $forest-green;
         text-decoration: none;
+        display: flex;
+        gap: 0.75rem;
+        @include heading();
+        font-size: 26px;
     }
 }
