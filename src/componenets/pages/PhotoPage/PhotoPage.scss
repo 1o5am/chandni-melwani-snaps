@@ -54,13 +54,49 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
+
+        @include tablet {
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    &__date {
+        margin-left: 1rem;
+      }
+    
+      &__photographer {
+          @include tablet { 
+            display: none;
+        }
+    }
+
+    &__photographer-tablet {
+        display: none;
+        @include tablet {
+            display: block;
+        }
     }
 
     &__likes-date {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            // width: 100%;
+            // .photo-page__photographer {
+            //     // order: 0;
+            //     // margin: 0 auto;
+            //     order: 2;
+            // }
+        }
     }
+
+    // &__likes-date-photographer-tablet {
+    //     justify-content: space-between;
+    // }
 
     // &__info {
     //     display: flex;
@@ -135,5 +171,63 @@
         justify-content: space-between;
         color: $forest-green;
     }
+
+    // &__likes-date {
+    //     display: flex;
+    //     justify-content: space-between;
+    //     align-items: center;
+    
+    //     @include tablet {
+    //       display: grid;
+    //       grid-template-columns: auto 1fr auto;
+    //       gap: 1rem;
+    //     }
+    //   }
+    
+    //   &__likes {
+    //     display: flex;
+    //     gap: 0.5rem;
+    //   }
+    
+    //   &__photographer {
+    //     display: none;
+        
+    //     @include tablet {
+    //       display: block;
+    //       text-align: center;
+    //     }
+    //   }
+    
+    //   &__photographer-mobile {
+    //     @include tablet {
+    //       display: none;
+    //     }
+    //   }
+
+    //   .photo-page {
+    //     &__likes-date-photographer {
+    //       display: flex;
+    //       flex-direction: column;
+    //       gap: 1rem;
+    //     }
+      
+    //     &__likes-date {
+    //       display: flex;
+    //       flex-direction: column;
+    //       gap: 0.5rem;
+      
+    //       @include tablet {
+    //         flex-direction: row;
+    //         justify-content: space-between;
+    //         align-items: center;
+    //         gap: 1rem;
+    //       }
+    //     }
+      
+    //     &__likes {
+    //       display: flex;
+    //       gap: 0.5rem;
+    //     }
+    //   }
 
 }

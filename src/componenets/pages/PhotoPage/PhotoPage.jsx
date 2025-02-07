@@ -96,14 +96,17 @@ export default function PhotoPage() {
                                     <span key={index} className="photo-page__tag">{tag}</span>
                                 ))}
                             </div>
-                            <div className="photo-page__likes-date-photographer">
-                                <div className="photo-page__likes-date">
-                                    <div className="photo-page__likes">
-                                            <img src={likeOutlineIcon} alt="like icon" className="photo-page__like-icon" />
-                                            <p className="photo-page__like-text">Likes: {photo.likes}</p>
+                            {/* <div className="photo-page__likes-date-photographer"> */}
+                                <div className='photo-page__likes-date-photographer-tablet'> 
+                                    <div className="photo-page__likes-date">
+                                        <div className="photo-page__likes">
+                                                <img src={likeOutlineIcon} alt="like icon" className="photo-page__like-icon" />
+                                                <p className="photo-page__like-text">Likes: {photo.likes}</p>
+                                        </div>
+                                        <p className="photo-page__photographer-tablet">Photo by {photo.photographer}</p>
+                                        <p className="photo-page__date">{formatDate(photo.timestamp)}</p>
                                     </div>
-                                    <p className="photo-page__date">{formatDate(photo.timestamp)}</p>
-                                </div>
+                                {/* </div>  */}
                                     <p className="photo-page__photographer">Photo by  {photo.photographer}</p>
                             </div>
                         </div>
