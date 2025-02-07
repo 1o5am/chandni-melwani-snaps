@@ -7,6 +7,8 @@
     //     order: 1;
     // }
 
+    @include grid-container();
+
     &__short-text {
         font-family: $font-outfit;
         font-weight: 300;

@@ -1,4 +1,7 @@
 @use "./styles/partials/variables" as *;
+@use "./styles/partials/mixins" as *;
+
+
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -7,11 +10,12 @@
 }
 
 #root {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-between;
     background-color: $pistachio;
-    min-height: 100vh;
+    // min-height: 100vh;
+
 }
 
 .hero{

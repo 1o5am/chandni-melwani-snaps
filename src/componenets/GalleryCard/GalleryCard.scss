@@ -26,13 +26,8 @@
         display: flex;
         flex-direction: column ;
         gap: 0.5rem;
-        // justify-content: space-between;
-        // align-items: center;
-        // background-color: $white;
         padding: 0.5rem;
-        // font-family: $font-outfit;
-        // border-top: 1px solid $sea-green;
-
+        
         @include tablet {
             padding: 0.75rem;
         }
@@ -44,18 +39,12 @@
 
     &__photographer {
         @include small-body();
-        margin-left: auto; /* Align to the right */
+        margin-left: auto;
         font-size: .7rem;
 
         position: absolute;
         bottom: 2.5rem;
         right: 0rem;
-
-        // bottom: 5px;
-        // right: 0;
-        // border: 2px solid red;
-        // background-color: yellow; // Make it stand out
-
         @include tag-non-clickable();
         background-color: $sage;
         color: $black;
@@ -86,18 +75,19 @@
         }
 
         @include desktop {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
+            bottom: 4rem;
+            padding-left: 1.2rem;
+            padding-right: 1.2rem;
+            text-align: center;
         }
     }
 
     &__tags {
-        // display: flex;
         display: flex;
         flex-wrap: wrap;
         gap: 0.5rem;
         margin-right: auto;
-        // border: 2px solid red;
-        // background-color: yellow; // Make it stand out
         color: $black;
 
 

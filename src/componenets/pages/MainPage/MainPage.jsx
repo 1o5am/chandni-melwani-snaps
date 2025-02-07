@@ -11,15 +11,19 @@ export default function Main({ filterOpen }) {
 
 
     return (
-        <main className={`main $filterOpen ? 'main-page__filter-open' : ''`}>
-            {filterOpen && (
-                <Filter
-                        activeFilter={activeFilter}
-                        setActiveFilter={setActiveFilter}
-                />)
-            }
-            <Hero filterOpen={filterOpen} />
-            <GalleryList activeFilter={activeFilter} />
-        </main>    
+        <div className={"main-page"}>
+            <div className="main-page__filter">
+                {filterOpen && (
+                    <Filter
+                            activeFilter={activeFilter}
+                            setActiveFilter={setActiveFilter}
+                    />)
+                }
+            </div>
+            <div className="main-page__hero-gallery">
+                <Hero className={`main-page__hero ${filterOpen ? 'main-page__hero-filter-open' : ''}`}/>
+                <GalleryList activeFilter={activeFilter} />
+            </div>
+        </div>    
     );
 }
