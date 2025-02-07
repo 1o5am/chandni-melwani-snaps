@@ -15,8 +15,9 @@ export default function GalleryCard ({ photo }) {
                 alt={photo.description}
                 className='gallery-card__image'
             />
-            <div className="gallery-card__details">
-                <span className='gallery-card__photographer'>{photo.photographer}</span>
+            <span className='gallery-card__photographer'>{photo.photographer}</span>
+            <div 
+            className="gallery-card__details">
                 <div className="gallery-card__tags">
                     {photo.tags.map((tag, index) => {
                         return (
