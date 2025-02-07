@@ -26,19 +26,23 @@ a {
     &__filter-button {
         display: flex;
         align-items: center;
-        gap: 1rem;
-        border: solid $forest-green;
-        border-radius: 40px;
-        // padding: 11px 22px 11px 22px;
-        padding: 0.7rem 1.4rem;
-        font-family: $font-outfit;
-        font-weight: 500;
-        color: $forest-green;
-        font-size: 26px;
+        // gap: 1rem;
+        // border: solid $forest-green;
+        // border-radius: 40px;
+        // // padding: 11px 22px 11px 22px;
+        // padding: 0.7rem 1.4rem;
+        // font-family: $font-outfit;
+        // font-weight: 500;
+        // color: $forest-green;
+        // font-size: 26px;
         @include heading();
-        @include cta-base();
         @include cta-default();
         @include cta-icon-spacing();
+        // background-color: $white;
+
+        // i
+
+        // color: $forest-green;
 
 
         &--active {
@@ -50,6 +54,7 @@ a {
             }
         }
     }
+    
 
     &__home-button {
         font-family: $font-outfit;

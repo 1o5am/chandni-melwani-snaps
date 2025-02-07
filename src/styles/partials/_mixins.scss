@@ -162,6 +162,7 @@
 @mixin tag-base {
     padding: 6px 8px;
     border-radius: 6px;
+    background-color:$white;
     
     @include tablet {
         padding: 8px 12px;
@@ -186,7 +187,12 @@
 @mixin tag-non-clickable {
     @include tag-base;
     border: 1px solid $sea-green;
-    color: $sea-green;
+    color: $black;
+
+    &:hover {
+        background-color: $sea-green;
+        color: $black;
+    }
 }
 
 // Form Field Mixins
@@ -216,11 +222,9 @@
     background-color: $sage;
     border: 1px solid $sea-green;
     border-radius: 8px;
-    padding: 8px;
     
     @include tablet {
         border-radius: 12px;
-        padding: 16px;
     }
 }
 

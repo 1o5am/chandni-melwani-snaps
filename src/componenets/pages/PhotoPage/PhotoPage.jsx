@@ -89,23 +89,22 @@ export default function PhotoPage() {
                 {photo && (
                     <div className="photo-page__content">
                         <img src={photo.photo} alt={photo.description} className="photo-page__image" />
-    
-                        <div className="photo-page__tags">
-                            {photo.tags.map((tag, index) => (
-                                <span key={index} className="photo-page__tag">{tag}</span>
-                            ))}
-                        </div>
-    
-                        <div className="photo-page__info">
-                            <div className="photo-page__likes">
-                                <img src={likeOutlineIcon} alt="like icon" className="photo-page__like-icon" />
-                                <p className="photo-page__like-text">Likes: {photo.likes}</p>
-                            </div>
 
-                            <div className="photo-page__date-photographer">
-                                <p className="photo-page__date">Date: {formatDate(photo.timestamp)}</p>
-                            
-                                <p className="photo-page__photographer">Photo by {photo.photographer}</p>
+                        <div className="photo-page__tags-likes-date-photographer">
+                            <div className="photo-page__tags">
+                                {photo.tags.map((tag, index) => (
+                                    <span key={index} className="photo-page__tag">{tag}</span>
+                                ))}
+                            </div>
+                            <div className="photo-page__likes-date-photographer">
+                                <div className="photo-page__likes-date">
+                                    <div className="photo-page__likes">
+                                            <img src={likeOutlineIcon} alt="like icon" className="photo-page__like-icon" />
+                                            <p className="photo-page__like-text">Likes: {photo.likes}</p>
+                                    </div>
+                                    <p className="photo-page__date">{formatDate(photo.timestamp)}</p>
+                                </div>
+                                    <p className="photo-page__photographer">Photo by  {photo.photographer}</p>
                             </div>
                         </div>
                     </div>
@@ -145,7 +144,7 @@ export default function PhotoPage() {
             </div>
     
             {/* Display Comments */}
-            <div className="photo-page__comments">
+            <div className="photo-page__comments">"
                 {comments.length > 0 ? (
                     comments.map((comment) => (
                         <div key={comment.id} className="photo-page__comment">

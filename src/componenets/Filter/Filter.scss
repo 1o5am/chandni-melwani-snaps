@@ -31,17 +31,23 @@
 
 
     &__tags {
-        @include tag-clickable();
-        // padding: 1rem;
-        // background-color: $white;
-        // border-radius: 0.5rem;
-        // border: 1px solid $forest-green;
+        // @include tag-clickable();
 
-
-        // &--active {
-        //     background-color: $forest-green;
-        //     color: $white;
+        // &:not(&--active) {
+        //     background-color: $sage;
+        //     color: $forest-green;
         //     border: 1px solid $forest-green;
         // }
+        padding: 1rem;
+        background-color: $white;
+        border-radius: 0.5rem;
+        border: 1px solid $forest-green;
+
+
+        &--active {
+            background-color: $forest-green;
+            color: $white;
+            border: 1px solid $forest-green;
+        }
     }
 }
