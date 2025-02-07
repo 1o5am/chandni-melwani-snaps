@@ -1,12 +1,13 @@
 @use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
 
 .hero {
     padding: $padding-side;
+    // @include grid-container();
 
     &__short-text {
         font-family: $font-outfit;
         font-weight: 300;
-        padding: $padding-side 0;
     }
 
     &__long-text {

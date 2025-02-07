@@ -19,7 +19,7 @@ a {
         font-family: $font-newsreader;
         font-weight: $font-newsreader-light;
         color: $black;
-        padding: 0.25rem $padding-side;
+        // padding: 0.25rem $padding-side;
         @include wordmark();
     }
 
