@@ -1,7 +1,7 @@
 import './Hero.scss'
 import { useLocation } from 'react-router-dom';
 
-export default function Hero() {
+export default function Hero({ filterOpen }) {
     const location = useLocation();
 
     if (location.pathname.startsWith('/photo')) {

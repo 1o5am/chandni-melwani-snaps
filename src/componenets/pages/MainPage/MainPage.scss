@@ -4,4 +4,22 @@
 
 .main-page {
    @include grid-container();
+
+   display: flex;
+   flex-direction: column;
+
+   &__filter-open {
+
+      .filter {
+         order: 1
+      }
+
+      .hero {
+         order: 2
+      }
+
+      .gallery-list {
+         order: 3
+      }
+   }
 }

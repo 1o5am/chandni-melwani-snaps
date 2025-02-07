@@ -2,6 +2,11 @@
 @use "../../styles/partials/mixins.scss" as *;
 
 .hero {
+
+    // .hero-below-filter {
+    //     order: 1;
+    // }
+
     &__short-text {
         font-family: $font-outfit;
         font-weight: 300;
