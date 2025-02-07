@@ -1,4 +1,5 @@
 @use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
 
 .filter {
     font-family: $font-outfit;
@@ -6,11 +7,18 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding: 0.5rem 1rem;
+    padding: 1rem;
 
     position: relative;
     z-index: 2;
+
+    background-color: $sage;
     
+}
+
+.filter-text {
+    color: $black;
+    @include heading();
 }
 .filter-list {
     display: flex;
@@ -21,16 +29,19 @@
     flex-wrap: wrap;
     align-content: flex-start;
 
-    &__tags {
-        padding: 1rem;
-        background-color: $white;
-        border-radius: 0.5rem;
-        border: 1px solid $forest-green;
 
-        &--active {
-            background-color: $forest-green;
-            color: $white;
-            border: 1px solid $forest-green;
-        }
+    &__tags {
+        @include tag-clickable();
+        // padding: 1rem;
+        // background-color: $white;
+        // border-radius: 0.5rem;
+        // border: 1px solid $forest-green;
+
+
+        // &--active {
+        //     background-color: $forest-green;
+        //     color: $white;
+        //     border: 1px solid $forest-green;
+        // }
     }
 }

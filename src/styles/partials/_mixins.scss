@@ -173,10 +173,12 @@
     @include tag-base;
     border: 1px solid $forest-green;
     color: $forest-green;
-    transition: all 0.3s ease;
+    background-color: $white;
+    // transition: all 0.3s ease;
+    // cursor: pointer;
     
     &:hover {
-        background-color: $forest-green;
+        background-color: $forest-green !important;
         color: $white;
     }
 }
